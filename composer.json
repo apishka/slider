@@ -1,0 +1,31 @@
+{
+    "name": "apishka/slider",
+    "description": "Apishka slider",
+    "keywords": ["form", "apishka"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Evgeny Reykh",
+            "email": "evgeny@reykh.com"
+        }
+    ],
+    "require": {
+        "php": ">=7",
+        "apishka/easy-extend": "*",
+        "apishka/uri": "^1.0.0"
+    },
+    "require-dev": {
+        "apishka/cs": "^1.0.0",
+        "phpunit/phpunit": "^5.5.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Apishka_Slider_": "source/"
+        }
+    },
+    "autoload-dev": {
+        "psr-0": {
+            "ApishkaTest_Slider_": "tests/"
+        }
+    }
+}
