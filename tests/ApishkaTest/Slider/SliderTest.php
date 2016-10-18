@@ -100,7 +100,7 @@ class ApishkaTest_Slider_SliderTest extends \PHPUnit_Framework_TestCase
         $slider = $this->getSlider()
             ->setUrl($url)
             ->setCurrentPage($page)
-            ->setLimit($limit)
+            ->setTotal($limit)
         ;
 
         foreach ($expected as $property => $value)
@@ -126,12 +126,38 @@ class ApishkaTest_Slider_SliderTest extends \PHPUnit_Framework_TestCase
                 100,
                 1,
                 array(
-                    'limit'         => 100,
+                    'limit'         => 20,
                     'currentPage'   => 1,
                     'urlFirstPage'  => '/example/page',
-                    'hasNextPage'   => false,
+                    'hasNextPage'   => true,
                     'urlNextPage'   => '/example/page?page=2',
                     'hasPrevPage'   => false,
+                ),
+            ),
+            array(
+                '/example/page',
+                100,
+                5,
+                array(
+                    'limit'         => 20,
+                    'currentPage'   => 5,
+                    'urlFirstPage'  => '/example/page',
+                    'hasNextPage'   => false,
+                    'hasPrevPage'   => true,
+                    'urlPrevPage'   => '/example/page?page=4',
+                ),
+            ),
+            array(
+                '/example/page',
+                100,
+                5,
+                array(
+                    'limit'         => 20,
+                    'currentPage'   => 5,
+                    'urlFirstPage'  => '/example/page',
+                    'hasNextPage'   => false,
+                    'hasPrevPage'   => true,
+                    'urlPrevPage'   => '/example/page?page=4',
                 ),
             ),
         );
